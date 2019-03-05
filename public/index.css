@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway+Dots");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i");
+
+/* Variables */
+:root {
+    /* Theme Colors */
+    --primary-color: #26E8BD;
+    --primary-color-alt: #5FFFDC;
+    --secondary-color: #5A7A96;
+    --secondary-color-alt: #354a5f;
+    --accent-color: #FF80CF;
+    --accent-color-alt: #F8A5FF;
+    --disabled-color: #BDBDBD;
+    --hover-color: rgba(255, 255, 255, 0.5);
+    --hover-background-color: #26E8BDA0;
+    --active-color: rgba(255, 255, 255, 0.5);
+    --active-background-color: #5A7A96A0;
+    /* Fonts */
+    --header-font: 'Raleway Dots', serif;
+    --text-font: 'Open Sans', sans-serif;
+    /* Form Inputs */
+    --input-background: rgba(255, 255, 255, 0.2);
+    --input-placeholder: rgba(255, 255, 255, 0.3);
+    --input-border: none;
+    --input-color: rgba(255, 255, 255, 1);
+    --input-border-radius: 0px;
+    --select-background: rgba(255, 255, 255, 1);
+    --select-color: rgba(0, 0, 0, 1);
+    --select-input-background: rgba(255, 255, 255, 0.075);
+    /* Hero Image */
+    --hero-width: 400px;
+    --hero-height: 400px;
+    --hero-border-radius: 35%;
+    --hero-background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+    /* Sponsor Colors */
+    --sponsors-title-color: var(--primary-color);
+    --sponsors-platinum-color: #D8D8D8;
+    --sponsors-gold-color: #FFDF00;
+    --sponsors-silver-color: #B7B7B7;
+    --sponsors-bronze-color: #C96F0D;
+}
+
+/* Global look and feel */
+body::-webkit-scrollbar { 
+    display: none; 
+}
+body {
+    font-family: var(--text-font) !important;
+}
+::selection {
+    background-color: var(--input-placeholder);
+}
+::placeholder {
+    color: var(--input-placeholder) !important;
+}
+a:link {
+    color: var(--primary-color);
+    transition: color 0.5s ease;
+}
+a:link:hover {
+    color: var(--hover-color);
+    text-decoration: none;
+}
+a:visited {
+    color: var(--primary-color);
+}
+a:visited:hover {
+    color: var(--hover-color);
+    text-decoration: none;
+}
+.btn:hover {
+    transition: background-color 0.5s;
+    background-color: var(--hover-background-color) !important;
+    color: var(--hover-color) !important;
+}
+.btn:active {
+    transition: background-color 0.5s;
+    background-color: var(--active-background-color) !important;
+    color: var(--active-color) !important;
+}
+.bg-gradient-left a, .bg-gradient-right a {
+    color: var(--secondary-color-alt);
+}
+h1, h2, h3, h4, h5, h6, p {
+    font-family: var(--text-font);
+}
+hr {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+h4{
+    color: var(--primary-color) !important;
+}
+
+/* Theme Nav/Font */
+.theme-font {
+    font-family: var(--header-font);
+}
+.theme-home-link {
+    position: relative;
+}
+.theme-home-link:before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 35px;
+    bottom: -25%;
+    left: -25%;
+    background: linear-gradient(to left, #FF80CF22, #FF80CF22, #FF80CF22);
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+.theme-home-link:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+/* Background Control */
+.bg-gradient-right {
+    background: #5A7A96;
+    background: linear-gradient(135deg, #5A7A9600, var(--primary-color));
+    width: 100vw; 
+    z-index: 10;
+}
+.bg-gradient-left {
+    background: #5A7A96;
+    background: linear-gradient(135deg, var(--primary-color), #5A7A9600 );
+    width: 100vw; 
+    z-index: 10;
+}
+.bg-no-gradient {
+    width: 100vw;
+    z-index: 10;
+}
+.skew-right, .skew-left {
+    padding-top: 3em;
+    padding-bottom: 2em;
+}
+.skew-right { 
+    transform: skew(0deg, -4deg);
+}
+.skew-left {
+    transform: skew(0deg, 4deg);
+}
+
+/* Landing Page */
+.faq hr {
+    height: 2px;
+    transition: all 0.5s ease;
+}
+.faq:hover hr {
+    background-color: var(--primary-color);
+}
+.faq h5 {
+    font-weight: 600;
+}
+.footer {
+    margin-top: 30px;
+    padding-top: 20px;
+}
+.footer .text-vcenter {
+    margin: 0;
+    line-height: 10vh; 
+}
+.footer .social-links {
+    color: #ffffff;
+    font-size: 100%; 
+}
+.footer .social-links:hover{
+    color: var(--primary-color);
+}
+.footer a {
+    color: var(--primary-color);
+    line-height: 10vh;
+    padding: 15px 10px; 
+}
+.footer .footer-logo {
+    display: inline-block;
+    height: calc(10vh*0.45); 
+}
+.color-priority {
+    width: 100%; 
+    color:  #ffffff !important;
+    z-index: 10;
+}
+#navigation-link {
+    font-family: var(--text-font);
+    color: white;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+#landing-section {
+    color: white;
+}
+
+/* Form Inputs (Dashboard/Login/Signup/Magic/Forgot) */
+input, textarea, .custom-file-label {
+    border-radius: var(--input-border-radius) !important;
+    background: var(--input-background) !important;
+    border: var(--input-border) !important;
+    color: var(--input-color) !important;
+    z-index: 0 !important;
+}
+.forcestyle div[class^="css-"] {
+    background: var(--select-input-background);
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    color: var(--input-color);
+}
+.forcestyle div[class^="css-"] div[class^="css-"] div[class^="css-"] div[class^="css-"] {
+    background: transparent;
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    color: var(--input-color);
+}
+.forcestyle div[class^="css-"] div[class^="css-"] div[class^="css-"] div[class^="css-"] input {
+    background: transparent !important;
+}
+.forcestyle div[id^="react-select-"] {
+    background: var(--select-background) !important;
+    color: var(--select-color) !important;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+    background-color: var(--primary-color) !important;
+}
+.custom-av-checkbox div {
+    background-color: transparent;
+}
+.custom-av-checkbox div div label p {
+    color: var(--input-color);
+}
+
+/* Form validator */
+.avfield-hide-inner {
+    visibility: hidden;
+}
+.invalid-feedback, .text-danger label {
+    color: var(--accent-color) !important;
+}
+.custom-av-checkbox .is-invalid div label p {
+    color: var(--accent-color) !important;
+}
+
+.sponsor-item-image {
+    transition: all .2s ease-in-out;
+    max-width: 100%;
+} 
+
+.sponsorship-background {
+    background: var(--active-color) !important;
+    border-radius: 25px;
+    margin-bottom: 25px;
+}
+
+
+.sponsor-item-image:hover {
+    transform: scale(1.3);
+}
+
+/* Dashboard Alerts */
+.profile-alert {
+    border: none !important;
+    color: white !important;
+}
+.profile-alert.profile-alert-success {
+    background: rgba(0, 255, 0, 0.25) !important;
+}
+.profile-alert.profile-alert-danger {
+    background: rgba(255, 0, 0, 0.25) !important;
+}
+.profile-alert.profile-alert-info {
+    background: rgba(0, 255, 255, 0.25) !important;
+}
+.profile-alert.profile-alert-warning {
+    background: rgba(255, 255, 0, 0.25) !important;
+}
+
+/* Live */
+.live-links {
+    width: 200px;
+    font-variant: small-caps;
+    border-radius: 10px !important;
+    text-shadow: 0px 0px 2px var(--primary-color);
+    border: none !important;
+}
+.live-slack-messages {
+    color: var(--secondary-color) !important;
+    background-color: transparent !important;
+}
+.live-slack-messages-text {
+    color: var(--primary-color-alt) !important;
+}
+.live-slack-page-btn {
+    background-color: var(--input-background) !important;
+    border: 0px solid black !important;
+}
+.live-slack-page-btn:hover {
+    transition: background-color 0.5s;
+    background-color: var(--hover-background-color) !important;
+    color: var(--hover-color) !important;
+}
+.live-slack-page-btn:active {
+    transition: background-color 0.5s;
+    background-color: var(--active-background-color) !important;
+    color: var(--active-color) !important;
+}
